@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Michigan Blue (#00274C) as primary dark background */
+    --background: 213 100% 8%;
+    --foreground: 45 100% 95%;
+    --card: 213 80% 12%;
+    --card-foreground: 45 100% 95%;
+    --popover: 213 80% 12%;
+    --popover-foreground: 45 100% 95%;
+    /* Michigan Maize (#FFCB05) as primary accent */
+    --primary: 47 100% 51%;
+    --primary-foreground: 213 100% 8%;
+    /* Darker blue for secondary */
+    --secondary: 213 60% 18%;
+    --secondary-foreground: 45 100% 95%;
+    --muted: 213 40% 16%;
+    --muted-foreground: 213 20% 60%;
+    --accent: 47 100% 51%;
+    --accent-foreground: 213 100% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 213 40% 20%;
+    --input: 213 40% 20%;
+    --ring: 47 100% 51%;
+    --chart-1: 47 100% 51%;
+    --chart-2: 120 60% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 213 80% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 213 100% 8%;
+    --sidebar-foreground: 45 100% 95%;
+    --sidebar-primary: 47 100% 51%;
+    --sidebar-primary-foreground: 213 100% 8%;
+    --sidebar-accent: 213 60% 18%;
+    --sidebar-accent-foreground: 45 100% 95%;
+    --sidebar-border: 213 40% 20%;
+    --sidebar-ring: 47 100% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
